@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>БКС 17,5% — бандл НСЖ «Кешбэк Промо» + «Гарант Доход»</title>
+<title>БКС 17,5% — НСЖ «Кешбэк Промо» + «Гарант Доход»</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="description" content="17,5% годовых гарантированно на 6 месяцев с «Гарант Доход» при покупке НСЖ «Кешбэк Промо» с кешбэком 42%.">
 <style>
@@ -41,11 +41,14 @@
   .eyebrow{font:600 12px var(--font-text);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
   .eyebrow.on-dark{color:var(--on-dark-soft)}
   .num{font-family:var(--font-display);font-weight:400}
-  .btn{display:inline-flex;align-items:center;gap:12px;background:var(--blue);color:#fff;border:none;border-radius:var(--r-pill);padding:16px 30px;font:500 16px var(--font-text);cursor:pointer;transition:background .2s var(--ease)}
-  .btn:hover{background:var(--blue-hover);color:#fff}
+  sup{font-size:.5em;line-height:0;position:relative;top:-.6em;font-family:var(--font-text)}
+  .disc sup{font-size:9px;top:-2px}
+  .btn{display:inline-flex;align-items:center;gap:12px;background:var(--blue);color:#fff;border:none;border-radius:var(--r-pill);padding:16px 30px;font:500 16px var(--font-text);cursor:pointer;box-shadow:0 12px 28px rgba(0,109,255,.30);transition:background .2s var(--ease),box-shadow .2s var(--ease),transform .2s var(--ease)}
+  .btn:hover{background:var(--blue-hover);color:#fff;box-shadow:0 16px 36px rgba(0,109,255,.40);transform:translateY(-1px)}
   .btn--sm{padding:12px 24px;font-size:15px}
-  .btn--ghost-dark{background:transparent;border:1px solid var(--on-dark-faint);color:var(--on-dark)}
-  .btn--ghost-dark:hover{background:rgba(247,250,255,.1);color:#fff}
+  .btn--lg{padding:19px 38px;font-size:17px}
+  .btn--ghost-dark{background:transparent;border:1px solid var(--on-dark-faint);color:var(--on-dark);box-shadow:none}
+  .btn--ghost-dark:hover{background:rgba(247,250,255,.1);color:#fff;box-shadow:none;transform:none}
 
   /* --- Header --- */
   .header{position:sticky;top:0;z-index:60;background:rgba(247,250,255,.9);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--hairline)}
@@ -66,42 +69,26 @@
 
   /* --- Hero --- */
   .hero{overflow:hidden;background-image:radial-gradient(rgba(0,26,61,.055) 1px,transparent 1px);background-size:26px 26px}
-  .hero__in{padding:76px 48px 0;animation:wfFade .7s ease both}
-  .hero__grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);grid-template-areas:"primary solution" "trust solution";column-gap:64px;row-gap:28px;align-items:start}
-  .hero__primary{grid-area:primary}
-  .solution{grid-area:solution;align-self:center}
-  .hero__badge{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(0,26,61,.2);border-radius:var(--r-pill);padding:9px 18px;font:500 13px var(--font-text);color:var(--muted);background:rgba(255,255,255,.7)}
-  .hero h1{margin:0;font:400 clamp(30px,4vw,56px)/1.1 var(--font-display);letter-spacing:-.01em;color:var(--ink);overflow-wrap:break-word}
+  .hero__in{max-width:var(--container);margin:0 auto;padding:100px 48px;animation:wfFade .7s ease both}
+  .hero__stack{display:flex;flex-direction:column;align-items:center;text-align:center}
+  .hero h1{margin:0;max-width:16ch;font:400 clamp(38px,6vw,86px)/1.12 var(--font-display);letter-spacing:-.015em;color:var(--ink);overflow-wrap:break-word}
   .hero h1 em{font-style:normal;color:var(--ink);white-space:nowrap}
-  .hero__rule{display:block;width:88px;height:3px;background:var(--gold);margin:22px 0 26px}
-  .hero__sub{margin:0;max-width:520px;font:400 17px/1.6 var(--font-text);color:var(--text)}
-  .hero__trust{grid-area:trust;display:flex;flex-wrap:wrap;align-content:start;gap:10px}
-  .chip{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--hairline);background:var(--surface);border-radius:var(--r-pill);padding:8px 15px;font:500 13px var(--font-text);color:var(--text)}
-  .chip b{font:400 13px var(--font-display);color:var(--ink)}
-  .facts{margin-top:40px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px;padding-bottom:0}
-  .fact{border-top:1px solid var(--rule);padding-top:16px}
-  .fact b{display:block;font:400 34px var(--font-display);color:var(--ink);line-height:1}
-  .fact b.gold{color:var(--gold-deep)}
-  .fact span{display:block;margin-top:8px;font:400 13px/1.45 var(--font-text);color:var(--muted)}
+  .hero__sub{margin:22px 0 0;max-width:620px;font:400 17px/1.6 var(--font-text);color:var(--muted)}
+  .hero__trust{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:56px}
+  .chip{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--hairline);background:var(--surface);border-radius:var(--r-pill);padding:12px 22px;font:600 11px var(--font-text);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .chip b{font:400 15px var(--font-display);letter-spacing:0;text-transform:none;color:var(--ink)}
 
-  /* Декоративная карточка «решение из двух контуров» (не форма) */
-  .solution{position:relative;background:var(--surface);border-radius:var(--r-card);padding:30px;box-shadow:var(--shadow-card)}
-  .solution__cap{font:600 11px var(--font-text);letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
-  .solution__title{margin:12px 0 20px;font:400 24px/1.2 var(--font-display);color:var(--ink)}
-  .contour{border-radius:18px;padding:20px 22px;margin-top:12px}
-  .contour--short{background:var(--dark)}
-  .contour--long{background:var(--green-tint)}
-  .contour__term{font:600 11px var(--font-text);letter-spacing:.14em;text-transform:uppercase}
-  .contour--short .contour__term{color:var(--on-dark-soft)}
-  .contour--long .contour__term{color:var(--green)}
-  .contour__body{display:flex;align-items:baseline;gap:14px;margin-top:10px;flex-wrap:wrap}
-  .contour__val{font:400 32px/1 var(--font-display)}
-  .contour--short .contour__val{color:var(--gold)}
-  .contour--long .contour__val{color:var(--ink)}
-  .contour__note{font:400 13px/1.4 var(--font-text)}
-  .contour--short .contour__note{color:var(--on-dark-soft)}
-  .contour--long .contour__note{color:rgba(0,26,61,.6)}
-  .solution__link{margin-top:18px;font:500 13px var(--font-text);color:var(--muted)}
+  /* Карточка со ставкой */
+  .rate{position:relative;overflow:hidden;margin-top:52px;background:var(--surface);border-radius:28px;padding:44px 52px;box-shadow:var(--shadow-card);display:grid;grid-template-columns:auto 1px auto;align-items:center;gap:0 52px;text-align:left}
+  .rate__ghost{position:absolute;right:-20px;bottom:-70px;font:400 260px/1 var(--font-display);color:var(--ghost);pointer-events:none}
+  .rate__left{position:relative}
+  .rate__cap{font:600 12px var(--font-text);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .rate__num{margin-top:10px;font:400 clamp(72px,8vw,104px)/1 var(--font-display);letter-spacing:-.02em;color:var(--ink)}
+  .rate__num small{font-size:.42em;letter-spacing:0}
+  .rate__rule{display:block;width:56px;height:3px;background:var(--gold);margin-top:14px}
+  .rate__divider{background:var(--hairline);align-self:stretch}
+  .rate__right{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:22px}
+  .rate__term{font:400 17px/1.45 var(--font-text);color:var(--text)}
 
   /* Секция заявки (iframe «Форма ОС») */
   .leadform{display:flex;flex-direction:column;gap:32px}
@@ -202,9 +189,13 @@
   /* --- Responsive --- */
   @media (max-width:960px){
     .wrap{padding:0 24px}
-    .hero__in{padding:56px 24px 0}
-    .hero__grid{grid-template-columns:1fr;grid-template-areas:"primary" "solution" "trust";row-gap:32px}
-    .facts{grid-template-columns:repeat(2,1fr);gap:24px}
+    .hero__in{padding:72px 24px}
+    .rate{grid-template-columns:1fr;gap:28px 0;padding:36px 28px;text-align:center;margin-top:40px}
+    .rate__divider{height:1px;align-self:auto}
+    .rate__rule{margin-left:auto;margin-right:auto}
+    .rate__right{align-items:center;gap:18px}
+    .rate__right .btn{width:100%;justify-content:center}
+    .hero__trust{margin-top:36px}
     .isp{grid-template-columns:1fr;gap:36px;padding:44px 28px;text-align:left}
     .bundle{grid-template-columns:1fr}
     .benefits{grid-template-columns:1fr}
@@ -235,7 +226,6 @@
       <a href="#nszh">НСЖ «Кешбэк Промо»</a>
       <a href="#isp">Гарант Доход</a>
       <a href="#bundle">Как работает</a>
-      <a href="#lead">Заявка</a>
     </nav>
     <a href="#lead" class="btn btn--sm header__cta" data-modal-open>Оставить заявку</a>
     <button class="header__burger" type="button" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileNav">
@@ -253,44 +243,30 @@
 <!-- 01 · Hero + форма -->
 <section class="hero" id="top">
   <div class="hero__in">
-    <div class="hero__grid">
-      <div class="hero__primary">
-        <h1>Гарантированный доход <em>17,5%</em> годовых</h1>
-        <span class="hero__rule" aria-hidden="true"></span>
-        <p class="hero__sub">17,5% годовых гарантированно на 6 месяцев с «Гарант Доход» — при покупке НСЖ «Кешбэк Промо» с кешбэком 42% от ежегодного взноса. Специальные условия для клиентов БКС.</p>
-        <div style="margin-top:34px">
-          <a href="#lead" class="btn" data-modal-open>Оставить заявку <span aria-hidden="true">→</span></a>
+    <div class="hero__stack">
+      <h1>Гарантированный доход</h1>
+      <p class="hero__sub">Гарантированная ставка на 6 месяцев с «Гарант Доход» — при покупке НСЖ «Кешбэк Промо» с кешбэком 42% от ежегодного взноса.</p>
+
+      <div class="rate">
+        <span class="rate__ghost" aria-hidden="true">%</span>
+        <div class="rate__left">
+          <div class="rate__cap">Ставка «Гарант Доход»</div>
+          <div class="rate__num num">17,5<small>%</small></div>
+          <span class="rate__rule" aria-hidden="true"></span>
+        </div>
+        <div class="rate__divider" aria-hidden="true"></div>
+        <div class="rate__right">
+          <div class="rate__term">годовых<br>на 6 месяцев</div>
+          <a href="#lead" class="btn btn--lg" data-modal-open>Оставить заявку <span aria-hidden="true">→</span></a>
         </div>
       </div>
-
-      <aside class="solution" aria-hidden="true">
-        <div class="solution__cap">Ваше решение из двух частей</div>
-        <div class="solution__title">Короткий доход и долгосрочная защита</div>
-        <div class="contour contour--short">
-          <div class="contour__term">Короткий контур · 6 месяцев</div>
-          <div class="contour__body"><span class="contour__val num">17,5%</span><span class="contour__note">фиксированная ставка · 100% защита капитала</span></div>
-        </div>
-        <div class="contour contour--long">
-          <div class="contour__term">Длинный контур · 6 лет</div>
-          <div class="contour__body"><span class="contour__val num">42%</span><span class="contour__note">кешбэк · накопления · страховая защита</span></div>
-        </div>
-        <div class="solution__link">Пропорция бандла 1:3 · доступ к «Гарант Доход» через 14 дней</div>
-      </aside>
 
       <div class="hero__trust">
-        <span class="chip">Рейтинг СК <b>«Эксперт РА» ruA−</b></span>
-        <span class="chip">Лицензии Банка России</span>
-        <span class="chip">100% защита капитала</span>
+        <span class="chip">СК <b>«БКС Страхование жизни»</b></span>
+        <span class="chip">Рейтинг <b>«Эксперт РА» ruA−</b></span>
+        <span class="chip">Лицензии <b>Банка России</b></span>
       </div>
     </div>
-
-    <div class="facts">
-      <div class="fact"><b class="num gold">17,5%</b><span>годовых по «Гарант Доход»</span></div>
-      <div class="fact"><b class="num">6&nbsp;мес.</b><span>срок фиксированного дохода</span></div>
-      <div class="fact"><b class="num">42%</b><span>кешбэк от ежегодного взноса НСЖ</span></div>
-      <div class="fact"><b class="num">1:3</b><span>пропорция бандла</span></div>
-    </div>
-    <div style="height:96px"></div>
   </div>
 </section>
 
@@ -306,7 +282,7 @@
       <div class="tile tile--green">
         <span class="tile__ghost" aria-hidden="true">42</span>
         <span class="tile__label">Кешбэк</span>
-        <div><div class="tile__val">42% от взноса</div><div class="tile__note">от каждого ежегодного взноса, выплата в конце срока</div></div>
+        <div><div class="tile__val">42%<sup>1</sup> от взноса</div><div class="tile__note">от каждого ежегодного взноса, выплата в конце срока</div></div>
       </div>
       <div class="tile tile--plain">
         <span class="tile__label">Срок</span>
@@ -333,9 +309,9 @@
         <h2 style="margin-top:16px">Повышенный фиксированный доход с «Гарант Доход»</h2>
         <p class="isp__lead">Короткая часть бандла ради которой всё и затевается: фиксированная ставка на 6 месяцев, доступная после оформления НСЖ. Доходность определена простым процентом.</p>
         <div class="isp__stats">
-          <div class="isp__stat"><span>Гарантированная ставка</span><b class="num">17,5% годовых</b></div>
+          <div class="isp__stat"><span>Гарантированная ставка</span><b class="num">17,5% годовых<sup>1</sup></b></div>
           <div class="isp__stat"><span>Срок продукта</span><b class="num">6 месяцев</b></div>
-          <div class="isp__stat"><span>Защита капитала</span><b class="num">100%</b></div>
+          <div class="isp__stat"><span>Защита вложений</span><b class="num">100%<sup>1</sup></b></div>
         </div>
         <div style="margin-top:32px">
           <a href="#lead" class="btn btn--ghost-dark" data-modal-open>Оставить заявку <span aria-hidden="true">→</span></a>
@@ -375,7 +351,7 @@
 <section class="section" id="bundle">
   <div class="wrap">
     <div class="section__head">
-      <span class="eyebrow">05 · Как работает бандл</span>
+      <span class="eyebrow">05 · Как работает программа</span>
       <h2>Инвестиция в НСЖ открывает доступ к «Гарант Доход»</h2>
       <p class="section__lead">Сумма взноса по «Гарант Доход» не может более чем в 3 раза превышать взнос по НСЖ «Кешбэк Промо». Доступ появляется через 14 календарных дней после оформления НСЖ.</p>
     </div>
@@ -383,7 +359,7 @@
     <div class="bundle">
       <div>
         <div class="ratio">
-          <div class="ratio__cap">Пример пропорции 1:3</div>
+          <div class="ratio__cap">Пример расчёта: на каждый рубль в НСЖ — до 3 рублей в «Гарант Доход»</div>
           <div class="ratio__row">
             <div class="ratio__bar ratio__bar--nszh">НСЖ «Кешбэк Промо»</div>
             <div class="ratio__amt num">1 млн ₽</div>
@@ -451,15 +427,19 @@
           <a href="https://bcs-express.ru/profit" target="_blank" rel="noopener">Профит</a>
         </div>
       </div>
-      <div class="footer__rating">Рейтинг финансовой надёжности СК: <b>«Эксперт РА» ruA−</b>, прогноз стабильный</div>
+      <div class="footer__rating">Рейтинг финансовой надёжности страховой компании: <b>«Эксперт РА» ruA−</b>, прогноз стабильный</div>
     </div>
     <div class="disc">
-      <p>Доходность по программе определена простым процентом. Гарантированная страховая сумма определяется договором страхования.</p>
+      <p>Доходность по программе определена простым процентом.</p>
+      <p><sup>1</sup> Гарантированная страховая сумма определяется договором страхования и рассчитывается методом простого процента.</p>
+      <p>Перед подписанием Договора страхования необходимо ознакомиться со всем комплектом документов: Договор страхования, Ключевой информационный документ об условиях страхования (КИД).</p>
       <p>ООО СК «БКС Страхование Жизни». Рейтинг финансовой надёжности «Эксперт РА» ruA−, прогноз по рейтингу стабильный, доступно на: <a href="https://raexpert.ru/releases/2025/oct07b" target="_blank" rel="noopener">raexpert.ru</a>. Лицензии Банка России: СЖ № 4365, СЛ № 4365 от 01.11.2018. Без ограничения срока действия.</p>
       <p>Данный продукт не имеет отношения к услугам по открытию банковских счетов и приёму вкладов, а также на него не распространяется система страхования вкладов. ООО «Компания БКС» не является страховщиком, а является агентом страховщика ООО СК «БКС Страхование жизни». Более подробно с условиями страхования по данной программе вы можете ознакомиться на <a href="https://bcslife.ru" target="_blank" rel="noopener">bcslife.ru</a>.</p>
       <p>Выплата производится согласно условиям страхования. В случае досрочного расторжения договора выплате подлежит выкупная сумма, величина которой может быть меньше величины уплаченных страховых взносов. Полные условия страхования доступны на сайте ООО СК «БКС Страхование жизни» <a href="https://bcslife.ru" target="_blank" rel="noopener">bcslife.ru</a>.</p>
-      <p>Средства, вложенные в программу, не подлежат разделу при разводе, конфискации, аресту, а также не могут быть заблокированы в результате приостановления операций по банковскому счёту до момента страховой выплаты — с учётом ограничений и исключений, предусмотренных законодательством РФ и условиями договора.</p>
-      <p>В случае ухода из жизни Застрахованного выплата производится поименованным выгодоприобретателям. Если в договоре не названо другое лицо, выгодоприобретателями признаются наследники Застрахованного лица. Возможны исключения и ограничения согласно законодательству РФ.</p>
+      <p>Средства, вложенные в программу, не подлежат разделу при разводе, конфискации, аресту, а также не могут быть заблокированы в результате приостановления операций по банковскому счёту до момента страховой выплаты. Денежные средства, являющиеся страховой премией по договору страхования, не могут являться объектом конфискации, а также не могут быть арестованы до момента выплаты.</p>
+      <p>В случае ухода из жизни Застрахованного выплата производится поименованным выгодоприобретателям. Если в договоре не названо другое лицо, выгодоприобретателями признаются наследники Застрахованного лица. Возможны исключения и ограничения, согласно ст. 1149 «Право на обязательную долю в наследстве» ГК РФ. Сроки произведения выплаты, а также полные условия страхования доступны на сайте ООО СК «БКС Страхование жизни» <a href="https://bcslife.ru" target="_blank" rel="noopener">bcslife.ru</a>.</p>
+      <p>Налоговый вычет предоставляется только физическим лицам — налоговым резидентам РФ, получающим доход, облагаемый НДФЛ по ставкам 13%, 15%, 18%, 20% или 22%. Условия для получения вычета: 1) заключение договора добровольного страхования жизни на срок не менее 5 лет (для договоров, заключённых в 2024–2026 гг.; срок постепенно увеличивается для более поздних лет); 2) уплата страховых взносов по такому договору. Максимальная сумма взносов, принимаемая к вычету за год, — 400 000 ₽. Максимальная сумма налога, которую можно вернуть из бюджета, — до 88 000 ₽ (22% от 400 000 ₽). Вычет предоставляется налоговым органом по окончании года, в котором были уплачены взносы, при соблюдении условий закона (договор добровольного страхования жизни был заключён в соответствующем налоговом периоде или был действителен в течение всего соответствующего налогового периода, налогоплательщик является выгодоприобретателем не более чем по трём действующим договорам одновременно) (ст. 219.2 НК РФ в ред. 418-ФЗ от 17.11.2025 г.).</p>
+      <p>Порядок освобождения страховых выплат от НДФЛ установлен ст. 213, 219.2 и 126.2 НК РФ (в редакции Федерального закона № 418-ФЗ от 17.11.2025). ООО СК «БКС Страхование жизни» выступает налоговым агентом и удерживает НДФЛ. По договорам добровольного страхования жизни, заключённым после 01.01.2025, налоговая льгота применяется только при соблюдении всех требований законодательства, включая: минимальный срок договора (с момента заключения до даты первой выплаты) — от 5 до 10 лет в зависимости от года заключения (5 лет — 2024–2026, 6 лет — 2027, 7 лет — 2028, 8 лет — 2029, 9 лет — 2030, 10 лет — 2031 или позднее); клиент может быть выгодоприобретателем не более чем по 3 договорам, подпадающим под льготу; освобождаемая сумма — до 30 млн ₽ за налоговый период по каждому договору (с превышения уплаченных взносов); промежуточные выплаты и выплаты при досрочном расторжении облагаются НДФЛ в общем порядке. При несоблюдении условий для получения льготы по налогообложению ООО СК «БКС Страхование жизни» обязано удержать и перечислить в бюджет сумму НДФЛ с соответствующей выплаты.</p>
     </div>
     <div class="footer__copy">ООО «Компания БКС» © 1995 — 2026 · Материал носит информационный характер и не является индивидуальной инвестиционной рекомендацией</div>
   </div>
