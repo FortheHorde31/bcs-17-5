@@ -126,6 +126,24 @@
   .tile--green{background:var(--green-tint)} .tile--green .tile__label{color:var(--green)}
   .tile--plain{background:var(--surface);border:1px solid var(--hairline)} .tile--plain .tile__label{color:var(--muted)}
 
+  /* Продукты программы */
+  .products{margin-top:44px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .product{border-radius:var(--r-banner);padding:44px;min-width:0}
+  .product--nszh{background:var(--surface);border:1px solid var(--hairline)}
+  .product--isp{background:var(--dark);color:var(--on-dark)}
+  .product__title{margin:14px 0 0;font:400 clamp(28px,3vw,40px)/1.12 var(--font-display);letter-spacing:-.01em;color:var(--ink)}
+  .product--isp .product__title{color:var(--on-dark)}
+  .product__lead{margin:14px 0 0;max-width:460px;font:400 16px/1.55 var(--font-text);color:var(--text)}
+  .product--isp .product__lead{color:var(--on-dark-soft)}
+  .product__stats{margin-top:30px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .product__stat{border-radius:16px;padding:18px;background:var(--blue-tint)}
+  .product__stat b{display:block;font:400 28px/1.1 var(--font-display);color:var(--ink)}
+  .product__stat span{display:block;margin-top:7px;font:400 13px/1.45 var(--font-text);color:var(--muted)}
+  .product--isp .product__stats{display:flex;flex-direction:column;gap:0}
+  .product--isp .product__stat{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:16px 0;border-radius:0;background:none;border-top:1px solid rgba(247,250,255,.16)}
+  .product--isp .product__stat b{font-size:22px;color:var(--on-dark);text-align:right}
+  .product--isp .product__stat span{margin:0;color:var(--on-dark-soft)}
+
   /* ИСП dark anchor */
   .isp{background:var(--dark);border-radius:var(--r-banner);padding:64px;display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;color:var(--on-dark)}
   .isp h2{color:var(--on-dark)}
@@ -166,6 +184,79 @@
   .cond__big{display:block;margin:14px 0 12px;font:400 56px/1 var(--font-display);color:var(--gold-deep)}
   .cond p{font:400 14px/1.55 var(--font-text);color:var(--text)}
 
+  /* --- v0.5 · Блок «Как работает программа» — в дизайн-языке БКС --- */
+  .v4-program{display:grid;grid-template-columns:minmax(0,1fr) minmax(400px,.82fr);gap:56px;align-items:stretch;font-family:var(--font-text)}
+  .v4-program__main{align-self:center;padding:32px 0}
+  .v4-program h2{margin:0;font:400 clamp(32px,4vw,50px)/1.1 var(--font-display);letter-spacing:-.01em;color:var(--ink)}
+  .v4-program__lead{margin:14px 0 38px;font:400 17px/1.6 var(--font-text);color:var(--text)}
+  .v4-program__steps{display:flex;flex-direction:column}
+  .v4-program-step{position:relative;display:flex;gap:20px;padding-bottom:26px}
+  .v4-program-step:last-child{padding-bottom:0}
+  .v4-program-step:not(:last-child)::after{content:"";position:absolute;left:21px;top:44px;bottom:0;width:2px;background:var(--blue-tint)}
+  .v4-program-step__no{position:relative;z-index:1;flex:none;width:44px;height:44px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font:500 17px var(--font-text)}
+  .v4-program-step h3{margin:0;font:500 20px/1.3 var(--font-text);color:var(--ink)}
+  .v4-program-step p{margin:6px 0 0;font:400 15px/1.55 var(--font-text);color:var(--muted)}
+  .v4-program__ratio{position:relative;isolation:isolate;overflow:hidden;padding:48px;background:var(--dark);border-radius:var(--r-banner);color:var(--on-dark);display:flex;flex-direction:column;justify-content:center;box-shadow:0 28px 70px rgba(0,26,61,.22),0 0 0 1px rgba(0,109,255,.16)}
+  .v4-program__ratio::before{content:"";position:absolute;z-index:-1;inset:0;background:radial-gradient(circle at 100% 0,rgba(0,109,255,.24),transparent 42%);pointer-events:none}
+  .v4-program__cap{font:600 12px/1.4 var(--font-text);letter-spacing:.16em;text-transform:uppercase;color:var(--on-dark-soft)}
+  .v4-program__ratio-value{margin-top:16px;font:400 clamp(76px,9vw,104px)/.9 var(--font-display);letter-spacing:-.02em;color:var(--gold)}
+  .v4-program__ratio-value span{color:var(--on-dark-faint)}
+  .v4-program__ratio-text{margin:18px 0 0;font:400 22px/1.3 var(--font-display);color:var(--on-dark-soft)}
+  .v4-program__bars{margin-top:34px;display:flex;flex-direction:column;gap:12px}
+  .v4-program__bar{border-radius:16px;padding:16px 20px;font:500 15px/1.3 var(--font-text)}
+  .v4-program__bar span{display:block;margin-top:3px;font-size:12px;font-weight:400;opacity:.8}
+  .v4-program__bar--nszh{width:fit-content;max-width:100%;background:var(--green-tint);color:var(--ink)}
+  .v4-program__bar--isp{width:100%;background:var(--blue);color:#fff}
+
+  /* --- v0.5 · Блок продуктов — в дизайн-языке БКС --- */
+  .v4-products{font-family:var(--font-text)}
+  .v4-products__cap{font:600 12px/1.4 var(--font-text);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .v4-products h2{margin:0 0 40px;font:400 clamp(32px,4vw,50px)/1.1 var(--font-display);letter-spacing:-.01em;color:var(--ink)}
+  .v4-products__grid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:stretch}
+  .v4-products__plus{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;width:60px;height:60px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font:400 34px/1 var(--font-text);box-shadow:0 8px 24px rgba(0,109,255,.30),0 0 0 8px var(--surface)}
+  .v4-product{min-width:0;padding:36px;border-radius:var(--r-card);display:flex;flex-direction:column}
+  .v4-product--nszh{background:var(--bg);border:1px solid var(--hairline);color:var(--ink)}
+  .v4-product--isp{background:var(--dark);color:var(--on-dark)}
+  .v4-product__cap{font:600 12px/1.4 var(--font-text);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .v4-product--isp .v4-product__cap{color:var(--on-dark-soft)}
+  .v4-product h3{margin:0 0 12px;font:400 clamp(27px,3vw,34px)/1.12 var(--font-display);letter-spacing:-.01em;color:var(--ink);overflow-wrap:anywhere}
+  .v4-product--isp h3{font-size:clamp(25px,2.65vw,31px);color:var(--on-dark)}
+  .v4-product__lead{margin:0 0 28px;font:400 16px/1.55 var(--font-text);color:var(--text)}
+  .v4-product--isp .v4-product__lead{margin-bottom:24px;color:var(--on-dark-soft)}
+  .v4-product__tiles{margin-top:auto;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .v4-product-tile{padding:22px;border-radius:16px;background:var(--blue-tint)}
+  .v4-product-tile b{display:block;font:400 clamp(25px,2.8vw,34px)/1.1 var(--font-display);color:var(--ink)}
+  .v4-product-tile span{display:block;margin-top:8px;font:400 14px/1.45 var(--font-text);color:var(--muted)}
+  .v4-product__rows{display:flex;flex-direction:column}
+  .v4-product-row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:18px 0;border-top:1px solid rgba(247,250,255,.16)}
+  .v4-product-row:last-child{border-bottom:1px solid rgba(247,250,255,.16)}
+  .v4-product-row span{font:400 15px/1.45 var(--font-text);color:var(--on-dark-soft)}
+  .v4-product-row b{font:400 clamp(21px,2.3vw,26px)/1.2 var(--font-display);color:var(--on-dark);text-align:right;white-space:nowrap}
+
+  @media (max-width:960px){
+    .v4-program{grid-template-columns:1fr;gap:40px}
+    .v4-program__main{padding:0}
+    .v4-program__ratio{padding:36px 30px}
+    .v4-products__grid{grid-template-columns:1fr}
+    .v4-product--nszh{grid-row:1}
+    .v4-products__plus{position:relative;left:auto;top:auto;transform:none;grid-row:2;margin:-16px auto}
+    .v4-product--isp{grid-row:3}
+  }
+  @media (max-width:520px){
+    .v4-program{gap:28px}
+    .v4-program__ratio{padding:28px 22px;border-radius:var(--r-card)}
+    .v4-program__lead{font-size:16px}
+    .v4-program-step{gap:14px}
+    .v4-program-step h3{font-size:18px}
+    .v4-program-step p{font-size:14px}
+    .v4-program__ratio-text{font-size:21px}
+    .v4-program__bar--nszh{width:fit-content}
+    .v4-product{padding:28px 22px}
+    .v4-product__tiles{grid-template-columns:1fr}
+    .v4-product-row{align-items:flex-start;flex-direction:column;gap:7px}
+    .v4-product-row b{text-align:left;white-space:normal}
+  }
+
   /* Повтор CTA */
   .recta{background:var(--dark);border-radius:var(--r-banner);padding:52px 56px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
   .recta h2{margin:0;max-width:640px;font:400 clamp(28px,3vw,40px)/1.15 var(--font-display);color:var(--on-dark)}
@@ -197,6 +288,8 @@
     .rate__right .btn{width:100%;justify-content:center}
     .hero__trust{margin-top:36px}
     .isp{grid-template-columns:1fr;gap:36px;padding:44px 28px;text-align:left}
+    .products{grid-template-columns:1fr}
+    .product{padding:32px 28px}
     .bundle{grid-template-columns:1fr}
     .benefits{grid-template-columns:1fr}
     .section{padding:72px 0}
@@ -223,20 +316,20 @@
   <div class="wrap header__in">
     <a href="#top" class="header__logo" aria-label="БКС Мир инвестиций"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTc0IiBoZWlnaHQ9IjI4IiB2aWV3Qm94PSIwIDAgMTc0IDI4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMTAzLjMxNyA0Ljc2NTk5VjEyLjE2NzZIMTA0LjM5OEwxMDguNjM2IDYuODQxMVYxMi4xNjc2SDEwOS44NzZWNC43NjU5OUgxMDguNzk1TDEwNC41NjcgMTAuMDgzNlY0Ljc2NTk5SDEwMy4zMTdaIiBmaWxsPSIjMDA2REYwIi8+CjxwYXRoIGQ9Ik05Ny4xMDYxIDguMjY4NzdMOTQuNDc4MiA0Ljc2NjY3SDkzLjM0NDRWMTIuMTY4M0g5NC41ODM3VjYuODUwNzRMOTcuMTE3IDEwLjIxODVMOTkuNjI4NCA2Ljg2MTQ4VjEyLjE2ODNIMTAwLjg3OVY0Ljc2NjY3SDk5Ljc0NDhMOTcuMTA2MSA4LjI2ODc3WiIgZmlsbD0iIzAwNkRGMCIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTExNC43MDMgOS42MDM3NUgxMTMuNTQ4VjEyLjE2NzZIMTEyLjMwOVY0Ljc2NTk5SDExNC43MDNDMTE2LjI1IDQuNzY1OTkgMTE3LjMwOSA1LjgxODc3IDExNy4zMDkgNy4xODQ4N0MxMTcuMzA5IDguNTUwOTcgMTE2LjI1IDkuNjAzNzUgMTE0LjcwMyA5LjYwMzc1Wk0xMTQuNjkzIDUuOTEzNjZIMTEzLjU0OFY4LjQ1Nzg3SDExNC42OTNDMTE1LjU4MiA4LjQ1Nzg3IDExNi4wOTIgNy45MDQ2MiAxMTYuMDkyIDcuMTg2NjZDMTE2LjA5MiA2LjQ2NTExIDExNS41ODIgNS45MTM2NiAxMTQuNjkzIDUuOTEzNjZaIiBmaWxsPSIjMDA2REYwIi8+CjxwYXRoIGQ9Ik05My4zNDQ0IDE1LjE4MjZWMjIuNTg0Mkg5NC40MjU0TDk4LjY2MzkgMTcuMjU3N1YyMi41ODQySDk5LjkwMzJWMTUuMTgyNkg5OC44MjIyTDk0LjU5NDcgMjAuNTAwMlYxNS4xODI2SDkzLjM0NDRaIiBmaWxsPSIjMDA2REYwIi8+CjxwYXRoIGQ9Ik0xMDIuMzM2IDE1LjE4MjZIMTAzLjU3NVYxOC4yNDc4SDEwNy4yOTVWMTUuMTgyNkgxMDguNTM1VjIyLjU4NDJIMTA3LjI5NVYxOS40MDQ0SDEwMy41NzVWMjIuNTg0MkgxMDIuMzM2VjE1LjE4MjZaIiBmaWxsPSIjMDA2REYwIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTEzLjU3MSAxNS4xODI2SDExMC45NzZWMjIuNTg0MkgxMTMuOUMxMTUuMzMxIDIyLjU4NDIgMTE2LjMyNiAyMS42MzUzIDExNi4zMjYgMjAuNDE2QzExNi4zMjYgMTkuNDk5MyAxMTUuODA2IDE4LjkzNTMgMTE1LjExOCAxOC42NTQyQzExNS41MzEgMTguMzUxNyAxMTUuODE3IDE3Ljg5MzMgMTE1LjgxNyAxNy4yMjU1QzExNS44MTcgMTYuMTEgMTE0LjkxOCAxNS4xODI2IDExMy41NzEgMTUuMTgyNlpNMTE0LjU5OSAxNy4yOTg5QzExNC41OTkgMTcuODcxOCAxMTQuMTg2IDE4LjI5OTcgMTEzLjUwNyAxOC4yOTk3SDExMi4yMTVWMTYuMjk4SDExMy41MDdDMTE0LjE4NiAxNi4yOTggMTE0LjU5OSAxNi43NTY0IDExNC41OTkgMTcuMjk4OVpNMTE1LjExOCAyMC40MDUzQzExNS4xMTggMjEuMDMwMiAxMTQuNjc0IDIxLjQ2ODggMTEzLjg2OCAyMS40Njg4SDExMi4yMTVWMTkuMzQxOEgxMTMuODY4QzExNC42NzIgMTkuMzQxOCAxMTUuMTE4IDE5Ljc4OTQgMTE1LjExOCAyMC40MDUzWiIgZmlsbD0iIzAwNkRGMCIvPgo8cGF0aCBkPSJNMTE4LjI5NCAxNS4xODI2SDEyMi44MThWMTYuMzVIMTE5LjUzNFYxOC4yNDc4SDEyMi4xODNWMTkuNDE1MkgxMTkuNTM0VjIxLjQxNjlIMTIyLjgxOFYyMi41ODQySDExOC4yOTRWMTUuMTgyNloiIGZpbGw9IiMwMDZERjAiLz4KPHBhdGggZD0iTTEyOC4xMzUgMTUuMDU3NUMxMjUuODg5IDE1LjA1NzUgMTI0LjIxNSAxNi43MTU0IDEyNC4yMTUgMTguODgzN0MxMjQuMjE1IDIxLjA1MTkgMTI1Ljg4OSAyMi43MDk4IDEyOC4xMzUgMjIuNzA5OEMxMjkuOTQ2IDIyLjcwOTggMTMxLjM4NyAyMS41NTE0IDEzMS43NTggMjAuMTAyOUgxMzAuNDIzQzEzMC4xMDQgMjAuOTQ4IDEyOS4xOTIgMjEuNTMxNyAxMjguMTMzIDIxLjUzMTdDMTI2LjU2NiAyMS41MzE3IDEyNS40NjQgMjAuMzc1MSAxMjUuNDY0IDE4Ljg4MzdDMTI1LjQ2NCAxNy4zOTIyIDEyNi41NjUgMTYuMjM1NiAxMjguMTMzIDE2LjIzNTZDMTI5LjE5NCAxNi4yMzU2IDEzMC4xMDQgMTYuODE5MyAxMzAuNDIzIDE3LjY2NDRIMTMxLjc1OEMxMzEuMzg5IDE2LjIxNDEgMTI5Ljk0OCAxNS4wNTc1IDEyOC4xMzUgMTUuMDU3NVoiIGZpbGw9IiMwMDZERjAiLz4KPHBhdGggZD0iTTEzNS4xMjYgMTYuMzVIMTMyLjk0M1YxNS4xODI2SDEzOC41NTlWMTYuMzVIMTM2LjM2NlYyMi41ODQySDEzNS4xMjZWMTYuMzVaIiBmaWxsPSIjMDA2REYwIi8+CjxwYXRoIGQ9Ik0xNDAuMzIgMTUuMTgyNlYyMi41ODQySDE0MS40MDFMMTQ1LjY0IDE3LjI1NzdWMjIuNTg0MkgxNDYuODc5VjE1LjE4MjZIMTQ1Ljc5OEwxNDEuNTcxIDIwLjUwMDJWMTUuMTgyNkgxNDAuMzJaIiBmaWxsPSIjMDA2REYwIi8+CjxwYXRoIGQ9Ik0xNTYuMTM3IDIxLjQxNjlWMjQuMTI3NkgxNTQuOTkyVjIyLjU4NDNIMTQ5LjMxMlYxNS4xODI2SDE1MC41NjJWMjEuNDE2OUgxNTMuOTMzVjE1LjE4MjZIMTU1LjE4M1YyMS40MTY5SDE1Ni4xMzdaIiBmaWxsPSIjMDA2REYwIi8+CjxwYXRoIGQ9Ik0xNTguMDE1IDE1LjE4MjZWMjIuNTg0MkgxNTkuMDk2TDE2My4zMzQgMTcuMjU3N1YyMi41ODQySDE2NC41NzRWMTUuMTgyNkgxNjMuNDkzTDE1OS4yNjUgMjAuNTAwMlYxNS4xODI2SDE1OC4wMTVaIiBmaWxsPSIjMDA2REYwIi8+CjxwYXRoIGQ9Ik0xNjcuMDA4IDIyLjU4NDJWMTUuMTgyNkgxNjguMjU4VjIwLjUwMDFMMTcyLjQ4NiAxNS4xODI2SDE3My41NjdWMjIuNTg0MkgxNzIuMzI4VjE3LjI1NzdMMTY4LjA4OSAyMi41ODQySDE2Ny4wMDhaIiBmaWxsPSIjMDA2REYwIi8+CjxwYXRoIGQ9Ik0xNjguNjMgMTIuOTgyMUgxNjkuNDQ1QzE2OS40NDUgMTMuNjA3IDE2OS44MDUgMTMuOTkzNyAxNzAuMzg4IDEzLjk5MzdDMTcwLjk3IDEzLjk5MzcgMTcxLjMzIDEzLjYwODggMTcxLjMzIDEyLjk4MjFIMTcyLjE0NkMxNzIuMTQ2IDE0LjA0NTYgMTcxLjM2MSAxNC43MTM1IDE3MC4zODYgMTQuNzEzNUMxNjkuNDE0IDE0LjcxMzUgMTY4LjYzIDE0LjA0NTYgMTY4LjYzIDEyLjk4MjFaIiBmaWxsPSIjMDA2REYwIi8+CjxwYXRoIGQ9Ik03Mi4xNTE5IDIwLjQ5MjVDNzIuOTkyMyAyMS4zMzY0IDczLjk4NTMgMjIuMDAwMyA3NS4xMzA4IDIyLjQ4NjhDNzYuMjc2NCAyMi45NzMzIDc3LjU1MDQgMjMuMjI4NiA3OC45MjM0IDIzLjIzNEM3OS45NDA1IDIzLjIzNCA4MC45MzM1IDIzLjA4MDggODEuODc1NiAyMi43NDc1QzgyLjgxNzcgMjIuNDM4NCA4My42ODIyIDIyLjAwNTcgODQuNDcxOCAyMS40MTdDODUuMjM3MyAyMC44NTUzIDg1Ljg5ODMgMjAuMTY0NiA4Ni40NTc3IDE5LjM3MTdDODcuMDE3MSAxOC41ODE1IDg3LjQyNCAxNy43MTA2IDg3LjY3ODIgMTYuNzQwM0g4My42ODIyQzgzLjUwNTYgMTcuMiA4My4yNTEzIDE3LjYwODUgODIuOTE5NCAxNy45NjZDODIuNTg3NSAxOC4zMjM1IDgyLjIwNzUgMTguNjI5OSA4MS43NzM5IDE4Ljg2MUM4MS4zNDAzIDE5LjExNjQgODAuOTA5NCAxOS4zMjA2IDgwLjQyNSAxOS40NDk2Qzc5Ljk0MDUgMTkuNTc2IDc5LjQzMTkgMTkuNjUzOSA3OC45MjM0IDE5LjY1MzlDNzguMDU4OSAxOS42NTM5IDc3LjI2OTMgMTkuNTAwNyA3Ni41ODE1IDE5LjE5NDNDNzUuODY2OCAxOC45MTQ4IDc1LjI1NjYgMTguNTA2MiA3NC43NDggMTcuOTY4N0M3NC4yMzk1IDE3LjQzMTEgNzMuODU5NSAxNi44MTgzIDczLjU3ODQgMTYuMTI3NUM3My4zMDAxIDE1LjQzOTUgNzMuMTcxNiAxNC42NzA4IDczLjE3MTYgMTMuODUzN0M3My4xNzE2IDEzLjAzNjYgNzMuMjk3NCAxMi4yNzA2IDczLjU3ODQgMTEuNTc5OEM3My44NTY4IDEwLjg4OTEgNzQuMjM5NSAxMC4yNzYzIDc0Ljc0OCA5LjczODdDNzUuMjU5MyA5LjIwMTE0IDc1Ljg2OTUgOC43OTI2MyA3Ni41ODE1IDguNDg2MjJDNzcuMjY5MyA4LjIwNCA3OC4wNTg5IDguMDUwNzcgNzguOTIzNCA4LjA1MDc3Qzc5LjQzMTkgOC4wNTA3NyA3OS45NDA1IDguMTI2MDMgODAuNDI1IDguMjU1MDRDODAuOTA5NCA4LjM4MTM3IDgxLjM0MDMgOC41ODU2NiA4MS43NzM5IDguODE2ODFDODIuMjA3NSA5LjA3MjE1IDgyLjU4NzUgOS4zNzg1MyA4Mi45MTk0IDkuNzM2MDFDODMuMjQ4NiAxMC4wOTM1IDgzLjUwMjkgMTAuNTAyIDgzLjY4MjIgMTAuOTYxNkg4Ny42NzgyQzg3LjQyNCA5Ljk5MTM2IDg3LjAxNzEgOS4wOTYzNiA4Ni40NTc3IDguMzAzNDdDODUuODk4MyA3LjUxMDU4IDg1LjIzNDYgNi44NDY2NyA4NC40NzE4IDYuMjU4MDVDODMuNjgyMiA1LjY5MzYyIDgyLjgxNzcgNS4yNjA5IDgxLjg3NTYgNC45Mjc2MkM4MC45MzM1IDQuNjIxMjEgNzkuOTQwNSA0LjQ2ODAyIDc4LjkyMzQgNC40NjgwMkM3Ny41NDc3IDQuNDY4MDIgNzYuMjc2NCA0LjY5NjQ1IDc1LjEzMDggNS4xODI5NEM3My45ODUzIDUuNjY5NDMgNzIuOTkyMyA2LjMzMzI4IDcyLjE1MTkgNy4xNzcyNEM3MS4zMTE0IDguMDIxMiA3MC42NTA0IDkuMDE4NCA3MC4xNjU5IDEwLjE2ODhDNjkuNjg0MSAxMS4zMTkxIDY5LjQ1NCAxMi41NDQ3IDY5LjQ1NCAxMy44NDgzQzY5LjQ1NCAxNS4xNTE5IDY5LjY4MTUgMTYuMzc3NSA3MC4xNjU5IDE3LjUyNzhDNzAuNjUwNCAxOC42NzgyIDcxLjMxMTQgMTkuNjQ4NSA3Mi4xNTE5IDIwLjQ5MjVaIiBmaWxsPSIjMDA2REYwIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNDguNzU3NSAxMy4xMzQ5QzQ4LjIyMzEgMTIuNjQ3NCA0Ny41NjMyIDEyLjI2NSA0Ni44MjU4IDExLjk4MjJDNDYuMDY0MyAxMS43MDIgNDUuMjUyMSAxMS41NzI4IDQ0LjM2MjMgMTEuNTcwMUgzOS4xOTc3VjguMjkyMjZINDguOTYwNlY0Ljc1ODU0SDM1LjQ4OTFWMjIuOTQ0MUg0NC4zNjIzQzQ1LjI0OTQgMjIuOTQ0MSA0Ni4wNjQzIDIyLjc5MDYgNDYuODI1OCAyMi41MDc4QzQ3LjU2MzIgMjIuMjI3NyA0OC4yMjMxIDIxLjg0MjUgNDguNzU3NSAyMS4zMzA4QzQ5LjI5MTkgMjAuODQzMyA0OS43MjIxIDIwLjIyOTIgNTAuMDUzNCAxOS41MzdDNTAuMzU4IDE4Ljg0NzUgNTAuNTEwMyAxOC4xMDQyIDUwLjUxMDMgMTcuMjU4NUM1MC41MTAzIDE2LjQxMjggNTAuMzU4IDE1LjY0NTEgNTAuMDUzNCAxNC45NTI5QzQ5LjcyMjEgMTQuMjYwNyA0OS4yOTE5IDEzLjY0NjcgNDguNzU3NSAxMy4xMzQ5Wk00NC4zMTE2IDE0Ljk3OThDNDUuMDk5OCAxNC45Nzk4IDQ1LjczMyAxNS4xODQ2IDQ2LjIxNjYgMTUuNTY5N0M0Ni43MDAzIDE1Ljk1MjIgNDYuOTI3MyAxNi41MTUxIDQ2LjkyNzMgMTcuMjU4NUM0Ni45MjczIDE4LjAwMTggNDYuNzAwMyAxOC41Mzc4IDQ2LjIxNjYgMTguOTIyOUM0NS43MzMgMTkuMzA4MSA0NS4wOTk4IDE5LjUxMjggNDQuMzExNiAxOS41MTI4SDM5LjE5NzdWMTQuOTc5OEg0NC4zMTE2WiIgZmlsbD0iIzAwNkRGMCIvPgo8cGF0aCBkPSJNNTcuNDMyMyAyMi45NDQxSDUzLjg3OTdWNC43NTg1NEg1Ny40MzIzVjEyLjQ2N0w2My43NTExIDQuNzU4NTRINjguMTY3OEw2MC45NjA4IDEzLjQ5MzFMNjkuNjcxMiAyMi45NDQxSDY1LjAzMjVMNTcuNDMyMyAxNC42OTcxVjIyLjk0NDFaIiBmaWxsPSIjMDA2REYwIi8+CjxwYXRoIGQ9Ik0xNC4wMTY2IDI4QzIxLjc1NzcgMjggMjguMDMzMSAyMS43MzIgMjguMDMzMSAxNEMyOC4wMzMxIDYuMjY4MDEgMjEuNzU3NyAwIDE0LjAxNjYgMEM2LjI3NTQzIDAgMCA2LjI2ODAxIDAgMTRDMCAyMS43MzIgNi4yNzU0MyAyOCAxNC4wMTY2IDI4WiIgZmlsbD0idXJsKCNwYWludDBfbGluZWFyXzQ2MDY0XzMyMjI2KSIvPgo8cGF0aCBkPSJNMTQuMDE2NiAyOEMyMS43NTc3IDI4IDI4LjAzMzEgMjEuNzMyIDI4LjAzMzEgMTRDMjguMDMzMSA2LjI2ODAxIDIxLjc1NzcgMCAxNC4wMTY2IDBDNi4yNzU0MyAwIDAgNi4yNjgwMSAwIDE0QzAgMjEuNzMyIDYuMjc1NDMgMjggMTQuMDE2NiAyOFoiIGZpbGw9InVybCgjcGFpbnQxX2xpbmVhcl80NjA2NF8zMjIyNikiLz4KPHBhdGggZD0iTTYuMzU4NDIgMi4zOTA2MUMxLjY5ODQzIDYuNjI0NDkgMi4yMDQxNSAxNC4yNTI4IDcuNDg5NCAxOS40MjcyQzEyLjc3MjggMjQuNjAxNSAyMC44MzMxIDI1LjM2NTYgMjUuNDk0OSAyMS4xMjk5QzI2LjAyMzEgMjAuNjUgMjYuNDg0OSAyMC4xMjY2IDI2Ljg4MSAxOS41NjgyQzI3LjYyMjQgMTcuODYxNyAyOC4wMzM0IDE1Ljk3ODggMjguMDMzNCAxNEMyOC4wMzM0IDYuMjY4MDEgMjEuNzU4IDAgMTQuMDE2OCAwQzExLjQxMTMgMCA4Ljk3MTg5IDAuNzEwMDcyIDYuODgxODYgMS45NDcwNEM2LjcwMzA1IDIuMDg4MjYgNi41Mjg0NyAyLjIzNjExIDYuMzU4NDIgMi4zOTA2MVoiIGZpbGw9InVybCgjcGFpbnQyX3JhZGlhbF80NjA2NF8zMjIyNikiLz4KPHBhdGggZD0iTTcuMzEgMi4zODk3N0M1LjEwNDQxIDUuNzQ0OTMgNy42NzMgMTAuOTU5IDEzLjA0NzkgMTQuMDMyNUMxOC40MjI3IDE3LjEwNzkgMjQuNTY2IDE2Ljg3OTcgMjYuNzczNCAxMy41MjI3QzI3LjM5NjggMTIuNTc0NyAyNy42MzkzIDExLjQ3ODYgMjcuNTQ1MyAxMC4zMjQ0QzI1LjkyOSA0LjM3NTQzIDIwLjQ4NDQgMCAxNC4wMTY3IDBDMTIuMDYzNSAwIDEwLjIwMzYgMC4zOTkwNDMgOC41MTQyOSAxLjExOTk2QzguMDM4NTQgMS40NzYxNiA3LjYzMjIyIDEuODk5NjIgNy4zMSAyLjM4OTc3WiIgZmlsbD0idXJsKCNwYWludDNfbGluZWFyXzQ2MDY0XzMyMjI2KSIvPgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDBfbGluZWFyXzQ2MDY0XzMyMjI2IiB4MT0iMTMuNjY2MiIgeTE9IjI3LjY1IiB4Mj0iMTMuODcxMyIgeTI9IjEuNjAxODgiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iIzFFNjZFNiIvPgo8c3RvcCBvZmZzZXQ9IjAuNDc5MTY3IiBzdG9wLWNvbG9yPSIjOENCNEYyIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0YxRjdGRSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50MV9saW5lYXJfNDYwNjRfMzIyMjYiIHgxPSIyNS45MzA2IiB5MT0iMjAuMyIgeDI9IjExLjIyNiIgeTI9IjkuMDgzMjQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iIzREODdFQSIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM3RUFBRjAiIHN0b3Atb3BhY2l0eT0iMCIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cmFkaWFsR3JhZGllbnQgaWQ9InBhaW50Ml9yYWRpYWxfNDYwNjRfMzIyMjYiIGN4PSIwIiBjeT0iMCIgcj0iMSIgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgtMjkuNzIxOSAtMTUuMTU2NyAxNy4wMzY1IC02OC40NzczIDMwLjYxODUgMTcuMjkzNSkiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agb2Zmc2V0PSIwLjEwMzI0MiIgc3RvcC1jb2xvcj0iIzQzODJFRiIvPgo8c3RvcCBvZmZzZXQ9IjAuNDU5OTM1IiBzdG9wLWNvbG9yPSIjN0VBQUYwIi8+CjxzdG9wIG9mZnNldD0iMC42MzA3MDgiIHN0b3AtY29sb3I9IiNCMkNERjYiLz4KPHN0b3Agb2Zmc2V0PSIwLjc5NDIxNiIgc3RvcC1jb2xvcj0iI0YwRjZGRCIvPgo8L3JhZGlhbEdyYWRpZW50Pgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50M19saW5lYXJfNDYwNjRfMzIyMjYiIHgxPSIyNi4yNTQyIiB5MT0iNC44OTI5NCIgeDI9IjYuMzA4NTQiIHkyPSI3LjcwNjUyIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiM5Q0JGRjQiLz4KPHN0b3Agb2Zmc2V0PSIwLjQ3NjI1MiIgc3RvcC1jb2xvcj0iI0NDRTBGRCIvPgo8c3RvcCBvZmZzZXQ9IjAuNzcwODMzIiBzdG9wLWNvbG9yPSIjRTlGMkZFIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0YxRjdGRSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPgo=" width="174" height="28" alt="БКС Мир инвестиций" style="display:block;height:28px;width:auto"></a>
     <nav class="header__nav" aria-label="Навигация">
-      <a href="#nszh">НСЖ&nbsp;«Кешбэк&nbsp;Промо»</a>
-      <a href="#isp">ИСП&nbsp;«Гарант&nbsp;Доход&nbsp;Ультра&nbsp;2.0»</a>
       <a href="#bundle">Как работает</a>
+      <a href="#products">Продукты программы</a>
+      <a href="#insurance">Преимущества</a>
     </nav>
-    <a href="#lead" class="btn btn--sm header__cta" data-modal-open>Узнайте подробнее</a>
+    <a href="#lead" class="btn btn--sm header__cta" data-modal-open>Связаться со мной</a>
     <button class="header__burger" type="button" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileNav">
       <span></span><span></span><span></span>
     </button>
   </div>
   <nav class="header__mobile-nav" id="mobileNav" aria-label="Мобильная навигация">
-    <a href="#nszh">НСЖ&nbsp;«Кешбэк&nbsp;Промо»</a>
-    <a href="#isp">ИСП&nbsp;«Гарант&nbsp;Доход&nbsp;Ультра&nbsp;2.0»</a>
     <a href="#bundle">Как работает</a>
-    <a href="#lead" class="btn btn--sm" data-modal-open>Узнайте подробнее</a>
+    <a href="#products">Продукты программы</a>
+    <a href="#insurance">Преимущества</a>
+    <a href="#lead" class="btn btn--sm" data-modal-open>Связаться со мной</a>
   </nav>
 </header>
 
@@ -257,69 +350,71 @@
         <div class="rate__divider" aria-hidden="true"></div>
         <div class="rate__right">
           <div class="rate__term">годовых<br>на 6 месяцев</div>
-          <a href="#lead" class="btn btn--lg" data-modal-open>Узнайте подробнее <span aria-hidden="true">→</span></a>
+          <a href="#lead" class="btn btn--lg" data-modal-open>Связаться со мной <span aria-hidden="true">→</span></a>
         </div>
       </div>
 
       <div class="hero__trust">
-        <span class="chip">СК <b>«БКС Страхование жизни»</b></span>
-        <span class="chip">Рейтинг <b>«Эксперт РА» ruA−</b></span>
-        <span class="chip">Лицензии <b>Банка России</b></span>
+        <span class="chip"><b>Консервативный риск-профиль</b></span>
+        <span class="chip"><b>Защита вложений 100%</b></span>
+        <span class="chip"><b>Короткий срок</b></span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 02 · НСЖ&nbsp;«Кешбэк&nbsp;Промо» -->
-<section class="section" id="nszh" style="background:var(--surface);border-top:1px solid var(--hairline-soft);border-bottom:1px solid var(--hairline-soft)">
+<!-- 05 · Как работает программа — макет 1b -->
+<section class="section" id="bundle">
   <div class="wrap">
-    <div class="section__head">
-      <span class="eyebrow">02 · Накопительная часть</span>
-      <h2>Гарантированные накопления с НСЖ&nbsp;«Кешбэк&nbsp;Промо»</h2>
-      <p class="section__lead">Долгосрочная основа решения: накопительное страхование жизни на 6 лет. Именно НСЖ открывает доступ к повышенной ставке по ИСП&nbsp;«Гарант&nbsp;Доход&nbsp;Ультра&nbsp;2.0».</p>
-    </div>
-    <div class="cards">
-      <div class="tile tile--green">
-        <span class="tile__ghost" aria-hidden="true">42</span>
-        <span class="tile__label">Кешбэк</span>
-        <div><div class="tile__val">42%<sup>1</sup></div><div class="tile__note">от каждого ежегодного взноса, выплата в конце срока</div></div>
+    <div class="v4-program">
+      <div class="v4-program__main">
+        <h2>Как работает программа</h2>
+        <p class="v4-program__lead">Инвестиция в НСЖ открывает доступ к ИСП&nbsp;«Гарант&nbsp;Доход&nbsp;Ультра&nbsp;2.0»</p>
+        <div class="v4-program__steps">
+          <article class="v4-program-step"><span class="v4-program-step__no">1</span><div><h3>Оставьте заявку</h3><p>Обсудите условия с финансовым советником.</p></div></article>
+          <article class="v4-program-step"><span class="v4-program-step__no">2</span><div><h3>Оформите НСЖ</h3><p>Подключите НСЖ&nbsp;«Кешбэк&nbsp;Промо».</p></div></article>
+          <article class="v4-program-step"><span class="v4-program-step__no">3</span><div><h3>Получите доступ к ИСП</h3><p>Через 14 календарных дней оформите ИСП под 17,5%.</p></div></article>
+        </div>
       </div>
-      <div class="tile tile--plain">
-        <span class="tile__label">Срок</span>
-        <div><div class="tile__val">6 лет</div><div class="tile__note">срок программы накоплений для достижения ваших целей</div></div>
-      </div>
-      <div class="tile tile--plain">
-        <span class="tile__label">Взнос</span>
-        <div><div class="tile__val">от 100 тыс. ₽</div><div class="tile__note">ежегодный взнос по программе</div></div>
-      </div>
-      <div class="tile tile--plain">
-        <span class="tile__label">Налог</span>
-        <div><div class="tile__val">Без налога</div><div class="tile__note">на инвестиционный доход по программе</div></div>
-      </div>
+      <aside class="v4-program__ratio">
+        <span class="v4-program__cap">Соотношение взносов</span>
+        <div class="v4-program__ratio-value">1<span>:</span>3</div>
+        <p class="v4-program__ratio-text">На 1 рубль в НСЖ — до 3 рублей в ИСП</p>
+        <div class="v4-program__bars">
+          <div class="v4-program__bar v4-program__bar--nszh">1 млн ₽<span>НСЖ&nbsp;«Кешбэк&nbsp;Промо»</span></div>
+          <div class="v4-program__bar v4-program__bar--isp">до 3 млн ₽<span>ИСП&nbsp;«Гарант&nbsp;Доход&nbsp;Ультра&nbsp;2.0»</span></div>
+        </div>
+      </aside>
     </div>
   </div>
 </section>
 
-<!-- 03 · ИСП&nbsp;«Гарант&nbsp;Доход&nbsp;Ультра&nbsp;2.0» (темный якорь) -->
-<section class="section" id="isp">
+<!-- 02–03 · Продукты программы — макет 2a -->
+<section class="section" id="products" style="background:var(--surface);border-top:1px solid var(--hairline-soft);border-bottom:1px solid var(--hairline-soft)">
   <div class="wrap">
-    <div class="isp">
-      <div>
-        <span class="eyebrow on-dark">03 · Фиксированный доход</span>
-        <h2 style="margin-top:16px">Повышенный фиксированный доход с ИСП&nbsp;«Гарант&nbsp;Доход&nbsp;Ультра&nbsp;2.0»</h2>
-        <p class="isp__lead">Краткосрочная часть решения с повышенной фиксированной ставкой на 6 месяцев, доступная после оформления НСЖ. Доходность определена простым процентом.</p>
-        <div class="isp__stats">
-          <div class="isp__stat"><span>Гарантированная ставка</span><b class="num">17,5% годовых<sup>1</sup></b></div>
-          <div class="isp__stat"><span>Срок продукта</span><b class="num">6 месяцев</b></div>
-          <div class="isp__stat"><span>Защита вложений</span><b class="num">100%<sup>1</sup></b></div>
-        </div>
-        <div style="margin-top:32px">
-          <a href="#lead" class="btn btn--ghost-dark" data-modal-open>Узнайте подробнее <span aria-hidden="true">→</span></a>
-        </div>
-      </div>
-      <div style="text-align:center">
-        <div class="isp__big num">17,5<small>%</small></div>
-        <div style="margin-top:8px;font:400 14px var(--font-text);color:var(--on-dark-soft)">годовых, гарантированно на 6 месяцев</div>
+    <div class="v4-products">
+      <h2>Накопления и фиксированный доход</h2>
+      <div class="v4-products__grid">
+        <div class="v4-products__plus" aria-hidden="true">+</div>
+        <article class="v4-product v4-product--nszh">
+          <h3>Гарантированные накопления с НСЖ&nbsp;«Кешбэк&nbsp;Промо»</h3>
+          <p class="v4-product__lead">Накопительное страхование жизни на 6 лет.</p>
+          <div class="v4-product__tiles">
+            <div class="v4-product-tile"><b>42%<sup>1</sup></b><span>кешбэк от каждого ежегодного взноса</span></div>
+            <div class="v4-product-tile"><b>6 лет</b><span>срок программы накоплений</span></div>
+            <div class="v4-product-tile"><b>от 100 тыс. ₽</b><span>ежегодный взнос</span></div>
+            <div class="v4-product-tile"><b>Без налога</b><span>на инвестиционный доход</span></div>
+          </div>
+        </article>
+        <article class="v4-product v4-product--isp">
+          <h3>Повышенный фиксированный доход с ИСП&nbsp;«Гарант&nbsp;Доход&nbsp;Ультра&nbsp;2.0»</h3>
+          <p class="v4-product__lead">Повышенная фиксированная ставка на 6 месяцев после оформления НСЖ.</p>
+          <div class="v4-product__rows">
+            <div class="v4-product-row"><span>Гарантированная ставка</span><b>17,5% годовых<sup>1</sup></b></div>
+            <div class="v4-product-row"><span>Срок продукта</span><b>6 месяцев</b></div>
+            <div class="v4-product-row"><span>Защита вложений</span><b>100%<sup>1</sup></b></div>
+          </div>
+        </article>
       </div>
     </div>
   </div>
@@ -329,7 +424,6 @@
 <section class="section" id="insurance" style="background:var(--surface);border-top:1px solid var(--hairline-soft);border-bottom:1px solid var(--hairline-soft)">
   <div class="wrap">
     <div class="section__head">
-      <span class="eyebrow">04 · Преимущества страхования</span>
       <h2>Надежность решений страховых продуктов</h2>
     </div>
     <div class="benefits">
@@ -347,50 +441,11 @@
   </div>
 </section>
 
-<!-- 05 · Условия бандла -->
-<section class="section" id="bundle">
-  <div class="wrap">
-    <div class="section__head">
-      <span class="eyebrow">05 · Как работает программа</span>
-      <h2>Инвестиция в НСЖ открывает доступ к ИСП&nbsp;«Гарант&nbsp;Доход&nbsp;Ультра&nbsp;2.0»</h2>
-      <p class="section__lead">Сумма взноса по ИСП&nbsp;«Гарант&nbsp;Доход&nbsp;Ультра&nbsp;2.0» не может более чем в 3 раза превышать взнос по НСЖ&nbsp;«Кешбэк&nbsp;Промо». Доступ появляется через 14 календарных дней после оформления НСЖ.</p>
-    </div>
-
-    <div class="bundle">
-      <div>
-        <div class="ratio">
-          <div class="ratio__cap">Пример расчета: на 1 рубль в НСЖ — до 3 рублей в ИСП&nbsp;«Гарант&nbsp;Доход&nbsp;Ультра&nbsp;2.0»</div>
-          <div class="ratio__row">
-            <div class="ratio__bar ratio__bar--nszh">НСЖ&nbsp;«Кешбэк&nbsp;Промо»</div>
-            <div class="ratio__amt num">1 млн ₽</div>
-          </div>
-          <div class="ratio__row">
-            <div class="ratio__bar ratio__bar--isp">ИСП&nbsp;«Гарант&nbsp;Доход&nbsp;Ультра&nbsp;2.0»</div>
-            <div class="ratio__amt num soft">до 3 млн ₽</div>
-          </div>
-        </div>
-        <div class="steps">
-          <div class="step"><div class="step__no">1</div><p>Оставляете заявку и обсуждаете условия с <b>финансовым советником</b>.</p></div>
-          <div class="step"><div class="step__no">2</div><p>Оформляете <b>НСЖ&nbsp;«Кешбэк&nbsp;Промо»</b> — накопительную основу бандла.</p></div>
-          <div class="step"><div class="step__no">3</div><p>Через <b>14 календарных дней</b> получаете возможность оформить ИСП&nbsp;«Гарант&nbsp;Доход&nbsp;Ультра&nbsp;2.0» под 17,5%.</p></div>
-        </div>
-      </div>
-
-      <aside class="cond">
-        <span class="eyebrow">Важное условие</span>
-        <span class="cond__big num">14 дней</span>
-        <p>Доступ к ИСП&nbsp;«Гарант&nbsp;Доход&nbsp;Ультра&nbsp;2.0» появляется не сразу, а через 14 календарных дней после оформления НСЖ&nbsp;«Кешбэк&nbsp;Промо».</p>
-      </aside>
-    </div>
-  </div>
-</section>
-
 <!-- Заявка (iframe «Форма ОС») — точка конверсии после блока условий -->
 <section class="section" id="lead" style="background:var(--surface);border-top:1px solid var(--hairline-soft);border-bottom:1px solid var(--hairline-soft)">
   <div class="wrap">
     <div class="leadform">
       <div class="leadform__aside">
-        <span class="eyebrow">06 · Заявка</span>
         <h2>Как получить ставку 17,5% годовых?</h2>
         <p class="section__lead">Оставьте заявку и узнайте подробные условия комплексного решения.</p>
         <div class="leadform__chips">
@@ -430,16 +485,16 @@
       <div class="footer__rating">Рейтинг финансовой надежности страховой компании: <b>«Эксперт РА» ruA−</b>, прогноз стабильный</div>
     </div>
     <div class="disc">
-      <p>Доходность по программе определена простым процентом.</p>
-      <p><sup>1</sup> Гарантированная страховая сумма определяется договором страхования и рассчитывается методом простого процента.</p>
+      <p>Гарантированная страховая сумма определяется договором страхования и рассчитывается методом простого процента.</p>
       <p>Перед подписанием Договора страхования необходимо ознакомиться со всем комплектом документов: Договор страхования, Ключевой информационный документ об условиях страхования (КИД).</p>
-      <p>ООО СК «БКС Страхование Жизни». Рейтинг финансовой надежности «Эксперт РА» ruA−, прогноз по рейтингу стабильный, доступно на: <a href="https://raexpert.ru/releases/2025/oct07b" target="_blank" rel="noopener">raexpert.ru</a>. Лицензии Банка России: СЖ № 4365, СЛ № 4365 от 01.11.2018. Без ограничения срока действия.</p>
-      <p>Данный продукт не имеет отношения к услугам по открытию банковских счетов и приему вкладов, а также на него не распространяется система страхования вкладов. ООО «Компания БКС» не является страховщиком, а является агентом страховщика ООО СК «БКС Страхование жизни». Более подробно с условиями страхования по данной программе вы можете ознакомиться на <a href="https://bcslife.ru" target="_blank" rel="noopener">bcslife.ru</a>.</p>
-      <p>Выплата производится согласно условиям страхования. В случае досрочного расторжения договора выплате подлежит выкупная сумма, величина которой может быть меньше величины уплаченных страховых взносов. Полные условия страхования доступны на сайте ООО СК «БКС Страхование жизни» <a href="https://bcslife.ru" target="_blank" rel="noopener">bcslife.ru</a>.</p>
+      <p>ООО СК «БКС Страхование Жизни». Рейтинг финансовой надёжности «Эксперт РА» ruA-, прогноз по рейтингу стабильный, доступно на: <a href="https://raexpert.ru/releases/2025/oct07b" target="_blank" rel="noopener">https://raexpert.ru/releases/2025/oct07b</a>. Лицензии Банка России: СЖ № 4365, СЛ № 4365 от 01.11.2018. Без ограничения срока действия.</p>
+      <p>Данный продукт не имеет отношения к услугам по открытию банковских счетов и приему вкладов, а также на него не распространяется система страхования вкладов. ООО «Компания БКС» не является страховщиком, а является агентом страховщика ООО СК «БКС Страхование жизни». Более подробно с условиями страхования по данной программе вы можете ознакомиться на <a href="https://bcslife.ru" target="_blank" rel="noopener">bcslife.ru</a></p>
+      <p>Выплата производится согласно условиям страхования. Полные условия страхования доступны на сайте ООО СК «БКС Страхование жизни» <a href="https://bcslife.ru" target="_blank" rel="noopener">bcslife.ru</a>.</p>
+      <p>В случае досрочного расторжения договора, выплате подлежит Выкупная сумма, величина которой может быть меньше величины уплаченных страховых взносов. Полные условия страхования доступны на сайте ООО СК «БКС Страхование жизни» <a href="http://bcslife.ru/" target="_blank" rel="noopener">http://bcslife.ru/</a></p>
       <p>Средства, вложенные в программу, не подлежат разделу при разводе, конфискации, аресту, а также не могут быть заблокированы в результате приостановления операций по банковскому счету до момента страховой выплаты. Денежные средства, являющиеся страховой премией по договору страхования, не могут являться объектом конфискации, а также не могут быть арестованы до момента выплаты.</p>
-      <p>В случае ухода из жизни Застрахованного выплата производится поименованным выгодоприобретателям. Если в договоре не названо другое лицо, выгодоприобретателями признаются наследники Застрахованного лица. Возможны исключения и ограничения, согласно ст. 1149 «Право на обязательную долю в наследстве» ГК РФ. Сроки произведения выплаты, а также полные условия страхования доступны на сайте ООО СК «БКС Страхование жизни» <a href="https://bcslife.ru" target="_blank" rel="noopener">bcslife.ru</a>.</p>
-      <p>Налоговый вычет предоставляется только физическим лицам — налоговым резидентам РФ, получающим доход, облагаемый НДФЛ по ставкам 13%, 15%, 18%, 20% или 22%. Условия для получения вычета: 1) заключение договора добровольного страхования жизни на срок не менее 5 лет (для договоров, заключенных в 2024–2026 гг.; срок постепенно увеличивается для более поздних лет); 2) уплата страховых взносов по такому договору. Максимальная сумма взносов, принимаемая к вычету за год, — 400 000 ₽. Максимальная сумма налога, которую можно вернуть из бюджета, — до 88 000 ₽ (22% от 400 000 ₽). Вычет предоставляется налоговым органом по окончании года, в котором были уплачены взносы, при соблюдении условий закона (договор добровольного страхования жизни был заключен в соответствующем налоговом периоде или был действителен в течение всего соответствующего налогового периода, налогоплательщик является выгодоприобретателем не более чем по трем действующим договорам одновременно) (ст. 219.2 НК РФ в ред. 418-ФЗ от 17.11.2025 г.).</p>
-      <p>Порядок освобождения страховых выплат от НДФЛ установлен ст. 213, 219.2 и 126.2 НК РФ (в редакции Федерального закона № 418-ФЗ от 17.11.2025). ООО СК «БКС Страхование жизни» выступает налоговым агентом и удерживает НДФЛ. По договорам добровольного страхования жизни, заключенным после 01.01.2025, налоговая льгота применяется только при соблюдении всех требований законодательства, включая: минимальный срок договора (с момента заключения до даты первой выплаты) — от 5 до 10 лет в зависимости от года заключения (5 лет — 2024–2026, 6 лет — 2027, 7 лет — 2028, 8 лет — 2029, 9 лет — 2030, 10 лет — 2031 или позднее); клиент может быть выгодоприобретателем не более чем по 3 договорам, подпадающим под льготу; освобождаемая сумма — до 30 млн ₽ за налоговый период по каждому договору (с превышения уплаченных взносов); промежуточные выплаты и выплаты при досрочном расторжении облагаются НДФЛ в общем порядке. При несоблюдении условий для получения льготы по налогообложению ООО СК «БКС Страхование жизни» обязано удержать и перечислить в бюджет сумму НДФЛ с соответствующей выплаты.</p>
+      <p>В случае ухода из жизни Застрахованного, выплата производится поименованным Выгодоприобретателям. Если в договоре страхования не названо в качестве Выгодоприобретателя другое лицо, в случае смерти Застрахованного лица выгодоприобретателями признаются наследники Застрахованного лица. Возможны исключения и ограничения, согласно ст. 1149 «Право на обязательную долю в наследстве» ГК РФ. Сроки произведения выплаты, а также полные условия страхования доступны на сайте ООО СК «БКС Страхование жизни» <a href="http://bcslife.ru/" target="_blank" rel="noopener">http://bcslife.ru/</a>.</p>
+      <p>Налоговый вычет предоставляется только физическим лицам – налоговым резидентам РФ, получающим доход, облагаемый НДФЛ по ставкам 13%, 15%, 18%, 20% или 22%. Условия для получения вычета: 1) заключение договора добровольного страхования жизни на срок не менее 5 лет (для договоров, заключенных в 2024-2026 гг.; срок постепенно увеличивается для более поздних лет); 2) уплата страховых взносов по такому договору. Максимальная сумма взносов, принимаемая к вычету за год – 400 000 ₽. Максимальная сумма налога, которую можно вернуть из бюджета, – до 88 000 ₽ (22% от 400 000 ₽). Вычет предоставляется налоговым органом по окончании года, в котором были уплачены взносы, при соблюдении условий закона (договор добровольного страхования жизни был заключён в соответствующем налоговом периоде или был действителен в течение всего соответствующего налогового периода , налогоплательщик является выгодоприобретателем не более чем по трем действующим договорам одновременно) (ст. 219.2 НК РФ в ред. 418-ФЗ от 17.11.2025 г.)</p>
+      <p>Порядок освобождения страховых выплат от НДФЛ установлен ст. 213, 219.2 и 126.2 НК РФ (в редакции Федерального закона № 418-ФЗ от 17.11.2025). ООО СК «БКС Страхование жизни» выступает налоговым агентом и удерживает НДФЛ. По договорам добровольного страхования жизни, заключённым после 01.01.2025, налоговая льгота применяется только при соблюдении всех требований законодательства, включая: минимальный срок договора (с момента заключения до даты первой выплаты): от 5 до 10 лет в зависимости от года заключения (5 лет – 2024-2026, 6 лет – 2027, 7 лет – 2028, 8 лет – 2029, 9 лет – 2030, 10 лет – 2031 или позднее); клиент может быть выгодоприобретателем не более чем по 3 договорам, подпадающим под льготу; освобождаемая сумма – до 30 млн руб. за налоговый период по каждому договору (с превышения уплаченных взносов); промежуточные выплаты и выплаты при досрочном расторжении облагаются НДФЛ в общем порядке. При несоблюдении условий для получения льготы по налогообложения, ООО СК «БКС Страхование жизни» обязано удержать и перечислить в бюджет сумму НДФЛ с соответствующей выплаты.</p>
     </div>
     <div class="footer__copy">ООО «Компания БКС» © 1995 — 2026 · Материал носит информационный характер и не является индивидуальной инвестиционной рекомендацией</div>
   </div>
@@ -452,7 +507,7 @@
     <div class="modal__head">
       <span class="eyebrow">Заявка</span>
       <h2>Зафиксируйте ставку 17,5% годовых</h2>
-      <p>Обсудите условия бандла с финансовым советником и получите персональный расчет.</p>
+      <p>Обсудите условия бандла с финансовым советником и получите персональный расчет</p>
     </div>
     <div class="form-embed">
       <iframe
